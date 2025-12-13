@@ -32,7 +32,7 @@ ambient_midi = stream.Stream()
 ambient_pdf = stream.Stream()
 
 # HELLO WORLD notes
-# This is a complete, three-voiced Hello World. The first stream has the program, the other two are ignored by Velato and serves just as harmony.
+# Starting Note: A4
 for s in [s_midi, s_pdf]:
     s.append(note.Note('A4', quarterLength=1.0))
     # Print ["H"]: F#, E, C, D, F#, C, E
@@ -328,16 +328,16 @@ combined_pdf.write('lily.pdf', fp='out/output',
                    indent=0,
                    lineWidth=90)  # 90mm line width - much narrower to prevent overflow
 try:
-    combined_pdf.write('lily.png', fp='out/output', 
+    combined_pdf.write('lily.svg', fp='out/output', 
                        paperSize='a5',
                        staffSize=16,
                        indent=0,
-                       lineWidth=90)  # Also generate PNG image
+                       lineWidth=90)  # Also generate SVG image
 except Exception as e:
-    # PNG generation may complete but music21 throws error finding it
-    # Check if PNG files were actually created
-    if os.path.exists('out/output-page1.png'):
-        print("PNG generation successful (output-page1.png, etc.)")
+    # SVG generation may complete but music21 throws error finding it
+    # Check if SVG files were actually created
+    if os.path.exists('out/output.svg'):
+        print("SVG generation successful (output.svg)")
     else:
-        print(f"PNG generation failed: {e}")
+        print(f"SVG generation failed: {e}")
 
