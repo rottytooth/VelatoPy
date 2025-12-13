@@ -43,12 +43,17 @@ class VelatoInterpreter:
         """Parse a MIDI file and extract the note sequence."""
         mid = mido.MidiFile(filename)
         
-        # Extract all note_on events from the first track
+        # Extract all note_on events from the first track with notes
         notes = []
-        for i, track in enumerate(mid.tracks):
+        for track in mid.tracks:
+            track_notes = []
             for msg in track:
                 if msg.type == 'note_on' and msg.velocity > 0:
-                    notes.append(msg.note)
+                    track_notes.append(msg.note)
+            if track_notes:
+                # Use the first track that has notes
+                notes = track_notes
+                break
         
         if not notes:
             raise ValueError("No notes found in MIDI file")

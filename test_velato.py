@@ -39,6 +39,20 @@ class TestVelatoInterpreter(unittest.TestCase):
         output = interpreter.run()
         self.assertEqual(output, 'Hello, World!')
 
+    def test_print_hello_world_chords(self):
+        """Test that Programs_print_h_5.mid outputs 'Hello, World!'"""
+        interpreter = VelatoInterpreter(verbose=False)
+        interpreter.parse_midi('Programs/Programs_print_h_5.mid')
+        output = interpreter.run()
+        self.assertEqual(output, 'Hello, World!')
+
+    def test_print_hello_world_multi_channel(self):
+        """Test that Programs_hw_multi_stream.mid outputs 'Hello, World!'"""
+        interpreter = VelatoInterpreter(verbose=False)
+        interpreter.parse_midi('Programs/Programs_hw_multi_stream.mid')
+        output = interpreter.run()
+        self.assertEqual(output, 'Hello, World!')
+
     def test_while_countdown(self):
         """Test that Programs_while_test.mid outputs countdown from 99 to 1"""
         interpreter = VelatoInterpreter(verbose=False)

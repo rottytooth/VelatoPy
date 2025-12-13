@@ -47,11 +47,11 @@ converter.convert_to_midi(commands, 'output.mid')
 
 ## Example Scripts
 
-### 1. Generate Program from Converter (`Tools/generate_from_converter.py`)
+### 1. Generate Example Program from PseudoCode and Generate MIDI file (`Scripts/generate_from_converter.py`)
 
 Demonstrates how to use `velato_note_suggestion_tool` to create a complete "Hello, World!" program.
 
-### 2. Generate Sheet Music (`Tools/lilypond_mid_and_pdf.py`)
+### 2. Generate MIDI and Sheet Music from list of notes (`Scripts/lilypond_mid_and_pdf.py`)
 
 Uses `music21` to create both MIDI files and sheet music (PDF) from Velato programs.
 
