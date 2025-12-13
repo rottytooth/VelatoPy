@@ -47,25 +47,22 @@ converter.convert_to_midi(commands, 'output.mid')
 
 ## Example Scripts
 
-### 1. Generate Program from Converter (`examples/generate_from_converter.py`)
+### 1. Generate Program from Converter (`Tools/generate_from_converter.py`)
 
 Demonstrates how to use `velato_converter` to create a complete "Hello, World!" program.
 
-### 2. Generate Sheet Music (`examples/lilypond_mid_and_pdf.py`)
+### 2. Generate Sheet Music (`Tools/lilypond_mid_and_pdf.py`)
 
 Uses `music21` to create both MIDI files and sheet music (PDF) from Velato programs.
 
+## Testing
 
-## Running Tests
-
-The project includes comprehensive tests using pytest:
-
-```bash
-pytest
-```
+This proj uses `pytest`. There is the beginning of a suite of tests for both the interpreter and the converter.
 
 ## Resources
 
 - [Velato site](http://danieltemkin.com/Esolangs/Velato/)
 - [Velato on Esolangs Wiki](https://esolangs.org/wiki/Velato)
 - [Original C# Implementation](https://github.com/rottytooth/Velato)
+- [Velato Hands-Free site](https://velato.net/HandsFree/) (a whistling interface for Velato)
+- [Velato Hands-Free](https://github.com/rottytooth/VelatoJS)
