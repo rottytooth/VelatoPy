@@ -2,7 +2,7 @@
 
 A Python implementation of the [Velato](https://velato.net) programming language, where code is inscribed as music. Each program is a MIDI file; the sequence of music notes determine the program's commands and logic.
 
-This interpreter is based on the [reference Velato compiler](https://github.com/rottytooth/Velato) (2009). That compiler is remaining in Framework 4.8 for the moment, meaning it compiles only to Windows.
+This interpreter is based on the [reference Velato compiler](https://github.com/rottytooth/Velato) written in C# (2009).
 
 ## Components
 
