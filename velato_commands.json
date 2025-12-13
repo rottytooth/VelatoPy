@@ -1,0 +1,189 @@
+{
+  "commands": {
+    "PRINT": {
+      "intervals": ["MAJOR_SIXTH", "PERFECT_FIFTH"],
+      "description": "Print expression"
+    },
+    "CHANGE_ROOT": {
+      "intervals": ["MAJOR_SECOND"],
+      "description": "Change the root note for interval calculations"
+    },
+    "LET": {
+      "intervals": ["MINOR_THIRD"],
+      "description": "Assign value to variable"
+    },
+    "DECLARE": {
+      "intervals": ["MINOR_SIXTH"],
+      "description": "Declare a variable with type"
+    },
+    "WHILE": {
+      "intervals": ["MAJOR_THIRD", "MAJOR_THIRD"],
+      "description": "While loop"
+    },
+    "IF": {
+      "intervals": ["MAJOR_THIRD", "PERFECT_FIFTH"],
+      "description": "If statement"
+    },
+    "ELSE": {
+      "intervals": ["MAJOR_THIRD", "MAJOR_SIXTH"],
+      "description": "Else clause"
+    },
+    "END_WHILE": {
+      "intervals": ["MAJOR_THIRD", "PERFECT_FOURTH"],
+      "description": "End while loop"
+    },
+    "END_IF": {
+      "intervals": ["MAJOR_THIRD", "MAJOR_SEVENTH"],
+      "description": "End if statement"
+    },
+    "ASSIGNMENT": {
+      "intervals": ["MAJOR_THIRD", "PERFECT_FIFTH", "PERFECT_FOURTH"],
+      "description": "Assign value with type declaration"
+    },
+    "ADD": {
+      "intervals": ["MAJOR_THIRD", "PERFECT_FOURTH", "MAJOR_SIXTH"],
+      "description": "Addition operator"
+    },
+    "SUBTRACT": {
+      "intervals": ["MINOR_THIRD", "PERFECT_FOURTH", "MAJOR_SIXTH"],
+      "description": "Subtraction operator"
+    },
+    "MULTIPLY": {
+      "intervals": ["MAJOR_THIRD", "PERFECT_FOURTH", "MINOR_SIXTH"],
+      "description": "Multiplication operator"
+    },
+    "DIVIDE": {
+      "intervals": ["MINOR_THIRD", "PERFECT_FOURTH", "MINOR_SIXTH"],
+      "description": "Division operator"
+    }
+  },
+  "expressions": {
+    "variable": {
+      "pattern": ["MINOR_OR_MAJOR_THIRD", "MINOR_OR_MAJOR_SECOND"],
+      "description": "Variable reference (3rd + 2nd + variable note)",
+      "handler": "variable"
+    },
+    "negative_int": {
+      "pattern": ["MINOR_OR_MAJOR_THIRD", "MINOR_OR_MAJOR_THIRD"],
+      "description": "Negative integer (3rd + 3rd + digits + 5th)",
+      "handler": "integer_literal",
+      "type": "INT",
+      "negate": true
+    },
+    "char": {
+      "pattern": ["MINOR_OR_MAJOR_THIRD", "PERFECT_FOURTH"],
+      "description": "Character literal (3rd + 4th + digits + 5th)",
+      "handler": "integer_literal",
+      "type": "CHAR",
+      "negate": false
+    },
+    "positive_int": {
+      "pattern": ["MINOR_OR_MAJOR_THIRD", "DIMINISHED_OR_PERFECT_FIFTH"],
+      "description": "Positive integer (3rd + 5th/6th + digits + 5th)",
+      "handler": "integer_literal",
+      "type": "INT",
+      "negate": false
+    },
+    "positive_double": {
+      "pattern": ["MINOR_OR_MAJOR_THIRD", "MINOR_OR_MAJOR_SIXTH"],
+      "description": "Positive double (3rd + 6th + int_digits + 5th + decimal_digits + 5th)",
+      "handler": "double_literal",
+      "type": "DOUBLE",
+      "negate": false
+    },
+    "negative_double": {
+      "pattern": ["MINOR_OR_MAJOR_THIRD", "MINOR_OR_MAJOR_SEVENTH"],
+      "description": "Negative double (3rd + 7th + int_digits + 5th + decimal_digits + 5th)",
+      "handler": "double_literal",
+      "type": "DOUBLE",
+      "negate": true
+    },
+    "opening_paren": {
+      "pattern": ["MINOR_OR_MAJOR_SIXTH", "MINOR_OR_MAJOR_SIXTH", "MINOR_OR_MAJOR_SIXTH"],
+      "description": "Opening parenthesis",
+      "handler": "paren"
+    },
+    "closing_paren": {
+      "pattern": ["MINOR_OR_MAJOR_SIXTH", "MINOR_OR_MAJOR_SIXTH", "MINOR_OR_MAJOR_SECOND"],
+      "description": "Closing parenthesis",
+      "handler": "paren"
+    }
+  },
+  "operators": {
+    "comparison": {
+      "equal": {
+        "pattern": ["MINOR_OR_MAJOR_SECOND", "MINOR_OR_MAJOR_SECOND"],
+        "symbol": "==",
+        "description": "Equality comparison"
+      },
+      "greater_than": {
+        "pattern": ["MINOR_OR_MAJOR_SECOND", "MINOR_OR_MAJOR_THIRD"],
+        "symbol": ">",
+        "description": "Greater than comparison"
+      },
+      "less_than": {
+        "pattern": ["MINOR_OR_MAJOR_SECOND", "PERFECT_FOURTH"],
+        "symbol": "<",
+        "description": "Less than comparison"
+      }
+    },
+    "arithmetic": {
+      "minus": {
+        "pattern": ["PERFECT_FIFTH", "PERFECT_FIFTH", "MINOR_OR_MAJOR_SECOND"],
+        "symbol": "-",
+        "description": "Subtraction operator"
+      },
+      "plus": {
+        "pattern": ["PERFECT_FIFTH", "PERFECT_FIFTH", "MINOR_OR_MAJOR_THIRD"],
+        "symbol": "+",
+        "description": "Addition operator"
+      },
+      "divide": {
+        "pattern": ["PERFECT_FIFTH", "PERFECT_FIFTH", "PERFECT_FOURTH"],
+        "symbol": "/",
+        "description": "Division operator"
+      },
+      "multiply": {
+        "pattern": ["PERFECT_FIFTH", "PERFECT_FIFTH", "DIMINISHED_OR_PERFECT_FIFTH"],
+        "symbol": "*",
+        "description": "Multiplication operator"
+      }
+    }
+  },
+  "interval_groups": {
+    "MINOR_OR_MAJOR_SECOND": ["MINOR_SECOND", "MAJOR_SECOND"],
+    "MINOR_OR_MAJOR_THIRD": ["MINOR_THIRD", "MAJOR_THIRD"],
+    "MINOR_OR_MAJOR_SIXTH": ["MINOR_SIXTH", "MAJOR_SIXTH"],
+    "MINOR_OR_MAJOR_SEVENTH": ["MINOR_SEVENTH", "MAJOR_SEVENTH"],
+    "DIMINISHED_OR_PERFECT_FIFTH": ["DIMINISHED_FIFTH", "PERFECT_FIFTH"]
+  },
+  "type_declarations": {
+    "int": {
+      "interval": "MINOR_THIRD",
+      "type_interval": "MINOR_OR_MAJOR_SECOND",
+      "description": "Integer type declaration"
+    },
+    "char": {
+      "interval": "MAJOR_THIRD",
+      "type_interval": "MINOR_OR_MAJOR_THIRD",
+      "description": "Character type declaration"
+    },
+    "double": {
+      "interval": "MINOR_OR_MAJOR_THIRD",
+      "type_interval": "PERFECT_FOURTH",
+      "description": "Double type declaration"
+    }
+  },
+  "digit_encoding": {
+    "MINOR_SECOND": 0,
+    "MAJOR_SECOND": 1,
+    "MINOR_THIRD": 2,
+    "MAJOR_THIRD": 3,
+    "PERFECT_FOURTH": 4,
+    "DIMINISHED_FIFTH": 5,
+    "MAJOR_SIXTH": 7,
+    "MINOR_SEVENTH": 8,
+    "MAJOR_SEVENTH": 9,
+    "PERFECT_FIFTH": "terminator"
+  }
+}
