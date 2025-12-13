@@ -1,16 +1,21 @@
 #!/usr/bin/env python3
 """
-Script to generate a complete Hello World program using velato_converter.
+Script to generate a complete Hello World program using velato_note_suggestion_tool.
 Demonstrates how to use the converter to create Velato MIDI programs.
 """
 
-from velato_converter import VelatoConverter
+import sys
+import os
+# Add parent directory to path to import velato_note_suggestion_tool
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
+from velato_note_suggestion_tool import VelatoNoteSuggestionTool
 
 
 def main():
     """Generate and display suggestions for a complete Hello World program."""
     
-    converter = VelatoConverter(root_note='C4')
+    converter = VelatoNoteSuggestionTool(root_note='C4')
     
     print("=" * 70)
     print("VELATO HELLO WORLD PROGRAM GENERATOR")
@@ -19,6 +24,7 @@ def main():
     
     # Define the Hello World program
     commands = [
+        'Starting Note [A4]',
         'Print ["H"]',
         'Print ["e"]',
         'Print ["l"]',

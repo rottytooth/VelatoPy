@@ -22,15 +22,15 @@ python velato.py Programs/Programs_print_hello_world.mid
 # Output: Hello, World!
 ```
 
-### 2. Velato Converter (`velato_converter.py`)
+### 2. Velato Note Suggestion Tool (`velato_note_suggestion_tool.py`)
 
 A tool to convert pseudocode commands into Velato MIDI note sequences.
 
 **Usage:**
 ```python
-from velato_converter import VelatoConverter
+from velato_note_suggestion_tool import VelatoNoteSuggestionTool
 
-converter = VelatoConverter(root_note='C4')
+converter = VelatoNoteSuggestionTool(root_note='C4')
 
 # Get note suggestions for a command
 notes = converter.suggest_notes('Print ["H"]')
@@ -49,7 +49,7 @@ converter.convert_to_midi(commands, 'output.mid')
 
 ### 1. Generate Program from Converter (`Tools/generate_from_converter.py`)
 
-Demonstrates how to use `velato_converter` to create a complete "Hello, World!" program.
+Demonstrates how to use `velato_note_suggestion_tool` to create a complete "Hello, World!" program.
 
 ### 2. Generate Sheet Music (`Tools/lilypond_mid_and_pdf.py`)
 

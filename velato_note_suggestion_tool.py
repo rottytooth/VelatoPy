@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Velato Converter - Convert pseudocode to Velato MIDI notes
+Velato Suggestion Tool - Convert pseudocode to a simple series of Velato MIDI notes
 
 Based on PseudoToVelato.cs from https://github.com/rottytooth/Velato
 """
@@ -12,7 +12,7 @@ from mido import Message, MidiFile, MidiTrack
 from velato_common import Interval, get_command_map, DIGIT_TO_INTERVAL, NOTE_NAMES
 
 
-class VelatoConverter:
+class VelatoNoteSuggestionTool:
     """Converts pseudocode commands to Velato note suggestions"""
     
     def __init__(self, root_note: str = 'C4'):
@@ -393,7 +393,7 @@ def main():
     
     if len(sys.argv) > 1:
         # Process command from arguments
-        converter = VelatoConverter()
+        converter = VelatoNoteSuggestionTool()
         command = ' '.join(sys.argv[1:])
         try:
             notes = converter.suggest_notes(command)
@@ -415,7 +415,7 @@ def main():
         print("  End While")
         print("\nEnter 'quit' to exit\n")
         
-        converter = VelatoConverter()
+        converter = VelatoNoteSuggestionTool()
         
         while True:
             try:

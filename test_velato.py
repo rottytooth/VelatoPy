@@ -7,7 +7,7 @@ import unittest
 import os
 import shutil
 from velato import VelatoInterpreter
-from velato_converter import VelatoConverter
+from velato_note_suggestion_tool import VelatoNoteSuggestionTool
 
 
 class TestVelatoInterpreter(unittest.TestCase):
@@ -69,7 +69,7 @@ class TestVelatoInterpreter(unittest.TestCase):
         ]
         
         # Generate MIDI file
-        converter = VelatoConverter()
+        converter = VelatoNoteSuggestionTool()
         output_file = os.path.join(self.test_output_dir, 'test_hello_world_generated.mid')
         
         try:
@@ -102,7 +102,7 @@ class TestVelatoInterpreter(unittest.TestCase):
         ]
         
         # Generate MIDI file
-        converter = VelatoConverter()
+        converter = VelatoNoteSuggestionTool()
         output_file = os.path.join(self.test_output_dir, 'test_if_generated.mid')
         
         try:
@@ -141,7 +141,7 @@ class TestVelatoInterpreter(unittest.TestCase):
         ]
         
         # Generate MIDI file
-        converter = VelatoConverter()
+        converter = VelatoNoteSuggestionTool()
         output_file = os.path.join(self.test_output_dir, 'test_nested_if_generated.mid')
         
         try:
