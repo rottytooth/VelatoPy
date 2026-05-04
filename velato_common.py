@@ -53,28 +53,54 @@ def interval_semitones(note1: int, note2: int) -> 'Interval':
 # Velato digit encoding/decoding mappings
 # Digit to interval: 0-5 -> 1-6, skip 6 (reserved), 7-9 -> 9-11
 DIGIT_TO_INTERVAL = {
-    0: 'MINOR_SECOND',      # 1
-    1: 'MAJOR_SECOND',      # 2
-    2: 'MINOR_THIRD',       # 3
-    3: 'MAJOR_THIRD',       # 4
-    4: 'PERFECT_FOURTH',    # 5
-    5: 'DIMINISHED_FIFTH',  # 6
-    7: 'MAJOR_SIXTH',       # 9
-    8: 'MINOR_SEVENTH',     # 10
-    9: 'MAJOR_SEVENTH',     # 11
+    # Change for 6, minor sixth
+    # Begin minor sixth change
+    #0: 'MINOR_SECOND',      # 1
+    #1: 'MAJOR_SECOND',      # 2
+    #2: 'MINOR_THIRD',       # 3
+    #3: 'MAJOR_THIRD',       # 4
+    #4: 'PERFECT_FOURTH',    # 5
+    #5: 'DIMINISHED_FIFTH',  # 6
+    #9: 'MAJOR_SIXTH',       # 7
+    #10: 'MINOR_SEVENTH',     # 8
+    #11: 'MAJOR_SEVENTH',     # 9
+
+    0: 'MINOR_SECOND',      # 0
+    1: 'MAJOR_SECOND',      # 1
+    2: 'MINOR_THIRD',       # 2
+    3: 'MAJOR_THIRD',       # 3
+    4: 'PERFECT_FOURTH',    # 4
+    5: 'DIMINISHED_FIFTH',  # 5
+    6: 'MINOR_SIXTH',       # 6
+    7: 'MAJOR_SIXTH',       # 7
+    8: 'MINOR_SEVENTH',     # 8
+    9: 'MAJOR_SEVENTH',     # 9
+    # End minor sixth change
 }
 
 # Interval to digit: reverse mapping for decoding
 INTERVAL_TO_DIGIT = {
-    1: 0,   # MINOR_SECOND
-    2: 1,   # MAJOR_SECOND
-    3: 2,   # MINOR_THIRD
-    4: 3,   # MAJOR_THIRD
-    5: 4,   # PERFECT_FOURTH
-    6: 5,   # DIMINISHED_FIFTH
-    9: 7,   # MAJOR_SIXTH
-    10: 8,  # MINOR_SEVENTH
-    11: 9,  # MAJOR_SEVENTH
+    # Change for 6, minor sixth
+    # Begin minor sixth change
+    #1: 0,   # MINOR_SECOND
+    #2: 1,   # MAJOR_SECOND
+    #3: 2,   # MINOR_THIRD
+    #4: 3,   # MAJOR_THIRD
+    #5: 4,   # PERFECT_FOURTH
+    #6: 5,   # DIMINISHED_FIFTH
+
+    0: 0,   # MINOR_SECOND
+    1: 1,   # MAJOR_SECOND
+    2: 2,   # MINOR_THIRD
+    3: 3,   # MAJOR_THIRD
+    4: 4,   # PERFECT_FOURTH
+    5: 5,   # DIMINISHED_FIFTH
+    6: 6,    # MINOR_SIXTH
+
+    7: 7,   # MAJOR_SIXTH
+    8: 8,  # MINOR_SEVENTH
+    9: 9,  # MAJOR_SEVENTH
+    # End minor sixth change
 }
 
 
