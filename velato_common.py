@@ -55,26 +55,16 @@ def interval_semitones(note1: int, note2: int) -> 'Interval':
 DIGIT_TO_INTERVAL = {
     # Change for 6, minor sixth
     # Begin minor sixth change
-    #0: 'MINOR_SECOND',      # 1
-    #1: 'MAJOR_SECOND',      # 2
-    #2: 'MINOR_THIRD',       # 3
-    #3: 'MAJOR_THIRD',       # 4
-    #4: 'PERFECT_FOURTH',    # 5
-    #5: 'DIMINISHED_FIFTH',  # 6
-    #9: 'MAJOR_SIXTH',       # 7
-    #10: 'MINOR_SEVENTH',     # 8
-    #11: 'MAJOR_SEVENTH',     # 9
-
-    0: 'MINOR_SECOND',      # 0
-    1: 'MAJOR_SECOND',      # 1
-    2: 'MINOR_THIRD',       # 2
-    3: 'MAJOR_THIRD',       # 3
-    4: 'PERFECT_FOURTH',    # 4
-    5: 'DIMINISHED_FIFTH',  # 5
-    6: 'MINOR_SIXTH',       # 6
-    7: 'MAJOR_SIXTH',       # 7
-    8: 'MINOR_SEVENTH',     # 8
-    9: 'MAJOR_SEVENTH',     # 9
+    0: 'MINOR_SECOND',      # 1
+    1: 'MAJOR_SECOND',      # 2
+    2: 'MINOR_THIRD',       # 3
+    3: 'MAJOR_THIRD',       # 4
+    4: 'PERFECT_FOURTH',    # 5
+    5: 'DIMINISHED_FIFTH',  # 6
+    6: 'MINOR_SIXTH',       # 8
+    7: 'MAJOR_SIXTH',       # 9
+    8: 'MINOR_SEVENTH',     # 10
+    9: 'MAJOR_SEVENTH',     #11
     # End minor sixth change
 }
 
