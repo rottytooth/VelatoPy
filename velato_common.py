@@ -87,7 +87,6 @@ INTERVAL_TO_DIGIT = {
     # End minor sixth change
 }
 
-
 def interval_name(semitones: int) -> str:
     """Get the interval name from semitones."""
     intervals = {
