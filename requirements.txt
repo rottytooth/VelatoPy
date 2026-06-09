@@ -15,7 +15,7 @@ more-itertools==10.8.0
 music21==9.9.1
 numpy==2.3.5
 packaging==25.0
-pillow==12.1.1
+pillow==12.2.0
 pluggy==1.6.0
 Pygments==2.20.0
 pyparsing==3.2.5
