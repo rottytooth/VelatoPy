@@ -51,32 +51,41 @@ def interval_semitones(note1: int, note2: int) -> 'Interval':
 
 
 # Velato digit encoding/decoding mappings
-# Digit to interval: 0-5 -> 1-6, skip 6 (reserved), 7-9 -> 9-11
+# Digit to interval: 0-5 -> 1-6, skip 7th half step from root (reserved), 7-9 -> 9-11
 DIGIT_TO_INTERVAL = {
+    # Change for 6, minor sixth
+    # Begin minor sixth change
     0: 'MINOR_SECOND',      # 1
     1: 'MAJOR_SECOND',      # 2
     2: 'MINOR_THIRD',       # 3
     3: 'MAJOR_THIRD',       # 4
     4: 'PERFECT_FOURTH',    # 5
     5: 'DIMINISHED_FIFTH',  # 6
+    6: 'MINOR_SIXTH',       # 8
     7: 'MAJOR_SIXTH',       # 9
     8: 'MINOR_SEVENTH',     # 10
-    9: 'MAJOR_SEVENTH',     # 11
+    9: 'MAJOR_SEVENTH',     #11
+    # End minor sixth change
 }
 
 # Interval to digit: reverse mapping for decoding
 INTERVAL_TO_DIGIT = {
-    1: 0,   # MINOR_SECOND
-    2: 1,   # MAJOR_SECOND
-    3: 2,   # MINOR_THIRD
-    4: 3,   # MAJOR_THIRD
-    5: 4,   # PERFECT_FOURTH
-    6: 5,   # DIMINISHED_FIFTH
-    9: 7,   # MAJOR_SIXTH
-    10: 8,  # MINOR_SEVENTH
-    11: 9,  # MAJOR_SEVENTH
-}
+    # Change for 6, minor sixth
+    # Begin minor sixth change
+    1: 0,   # MINOR_SECOND  1 x 1/2 step
+    2: 1,   # MAJOR_SECOND  2 x 1/2 steps
+    3: 2,   # MINOR_THIRD   3 x 1/2 steps
+    4: 3,   # MAJOR_THIRD   4 X 1/2 steps
+    5: 4,   # PERFECT_FOURTH  5 x 1/2 steps
+    6: 5,   # DIMINISHED_FIFTH  6 x 1/2 steps
 
+    8: 6,    # MINOR_SIXTH   8 x 1/2 steps
+
+    9: 7,   # MAJOR_SIXTH    9 x 1/2 steps
+    10: 8,  # MINOR_SEVENTH  10 x 1/2 steps
+    11: 9,  # MAJOR_SEVENTH    11 x 1/2 steps
+    # End minor sixth change
+}
 
 def interval_name(semitones: int) -> str:
     """Get the interval name from semitones."""
